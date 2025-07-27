@@ -7,7 +7,6 @@ import {
 	MapPin,
 	Heart,
 	Phone,
-	Clock,
 	Users,
 	Camera,
 	Building,
@@ -44,6 +43,7 @@ interface iWeddingInvitationProps {
 // NavButton component extracted as a separate component
 const NavButton: FC<iNavButtonProps> = ({
 	section,
+	// eslint-disable-next-line @typescript-eslint/naming-convention
 	icon: Icon,
 	label,
 	isActive,
@@ -69,6 +69,7 @@ const NavButton: FC<iNavButtonProps> = ({
 // Mobile NavButton component with text always visible
 const MobileNavButton: FC<iNavButtonProps> = ({
 	section,
+	// eslint-disable-next-line @typescript-eslint/naming-convention
 	icon: Icon,
 	label,
 	isActive,
@@ -403,13 +404,6 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 						);
 					})}
 				</div>
-
-				<div className="mt-12 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl p-8 text-white text-center">
-					<h3 className="text-xl font-light mb-2">Plan Your Stay</h3>
-					<p className="text-blue-100">
-						Make the most of your visit to this beautiful region of Kerala
-					</p>
-				</div>
 			</div>
 		);
 	};
@@ -435,14 +429,31 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 							Emergency Contact
 						</h3>
 					</div>
-					<div className="text-red-700">
-						<p className="font-medium">Wedding Coordinator</p>
-						<a
-							href="tel:+919876543210"
-							className="text-red-600 hover:text-red-800 underline"
-						>
-							+91 98765 43210
-						</a>
+					<div className="space-y-4">
+						<div className="text-red-700">
+							<p className="font-medium">Salman Faris</p>
+							<a
+								href="tel:+918075481757"
+								className="text-red-600 hover:text-red-800 underline"
+							>
+								+91 8075481757
+							</a>
+							<p className="text-sm text-gray-600 mt-1">
+								Languages Spoken: Malayalam & English
+							</p>
+						</div>
+						<div className="text-red-700">
+							<p className="font-medium">Muhammad Swalah</p>
+							<a
+								href="tel:+919656303436"
+								className="text-red-600 hover:text-red-800 underline"
+							>
+								+91 9656303436
+							</a>
+							<p className="text-sm text-gray-600 mt-1">
+								Languages Spoken: Malayalam & English
+							</p>
+						</div>
 					</div>
 				</div>
 
@@ -503,49 +514,48 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 		);
 	};
 
+	// Render the appropriate section based on activeSection
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-			{/* Top Navigation - Simplified on mobile */}
-			<nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 pb-16 md:pb-0">
+			{" "}
+			{/* Add padding at bottom for mobile nav */}
+			{/* Desktop/Tablet Navigation */}
+			<nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 hidden md:block">
 				<div className="max-w-4xl mx-auto px-4 py-3">
-					<div className="flex justify-center">
-						<div className="sm:hidden text-center">
-							<h1 className="text-xl font-medium text-gray-800">
-								{activeSection === "home" && "Wedding Invitation"}
-								{activeSection === "explore" && "Explore Nilambur"}
-								{activeSection === "emergency" && "Emergency Info"}
-							</h1>
-						</div>
-						<div className="hidden sm:flex justify-center space-x-2 overflow-x-auto">
-							<NavButton
-								section="home"
-								icon={Heart}
-								label="Invitation"
-								isActive={activeSection === "home"}
-								onClick={setActiveSection}
-							/>
-							<NavButton
-								section="explore"
-								icon={Camera}
-								label="Explore"
-								isActive={activeSection === "explore"}
-								onClick={setActiveSection}
-							/>
-							<NavButton
-								section="emergency"
-								icon={AlertTriangle}
-								label="Emergency"
-								isActive={activeSection === "emergency"}
-								onClick={setActiveSection}
-							/>
-						</div>
+					<div className="flex justify-center space-x-2 overflow-x-auto">
+						<NavButton
+							section="home"
+							icon={Heart}
+							label="Invitation"
+							isActive={activeSection === "home"}
+							onClick={setActiveSection}
+						/>
+						<NavButton
+							section="explore"
+							icon={Camera}
+							label="Explore"
+							isActive={activeSection === "explore"}
+							onClick={setActiveSection}
+						/>
+						<NavButton
+							section="emergency"
+							icon={AlertTriangle}
+							label="Emergency"
+							isActive={activeSection === "emergency"}
+							onClick={setActiveSection}
+						/>
 					</div>
 				</div>
 			</nav>
-
-			{/* Bottom Navigation - Visible only on mobile */}
-			<nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50 sm:hidden">
-				<div className="flex justify-between px-2 py-2">
+			{/* Main Content with padding for top nav on desktop */}
+			<div className="md:pt-20">
+				{activeSection === "home" && renderHomeSection()}
+				{activeSection === "explore" && renderExploreSection()}
+				{activeSection === "emergency" && renderEmergencySection()}
+			</div>
+			{/* Mobile Bottom Navigation */}
+			<nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-50">
+				<div className="flex items-center justify-around">
 					<MobileNavButton
 						section="home"
 						icon={Heart}
@@ -569,13 +579,6 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 					/>
 				</div>
 			</nav>
-
-			{/* Main Content - Add padding at bottom for mobile navigation */}
-			<div className="pt-20 pb-20 sm:pb-8">
-				{activeSection === "home" && renderHomeSection()}
-				{activeSection === "explore" && renderExploreSection()}
-				{activeSection === "emergency" && renderEmergencySection()}
-			</div>
 		</div>
 	);
 };
