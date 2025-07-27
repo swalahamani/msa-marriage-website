@@ -245,6 +245,20 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 						</span>{" "}
 						- your blessings are more than enough. 💙
 					</p>
+					<p className="text-gray-600 text-sm leading-relaxed mt-3">
+						If you truly wish to give something, we'd be honored if you'd
+						consider making a donation to the{" "}
+						<a
+							href="https://go.swalah.co/msa-marriage-donate-wfp"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-600 hover:text-blue-800 underline"
+						>
+							World Food Programme
+						</a>
+						. Your contribution could help provide meals to those who need them
+						most, spreading love beyond our celebration.
+					</p>
 				</div>
 
 				{/* No Photos Message */}
