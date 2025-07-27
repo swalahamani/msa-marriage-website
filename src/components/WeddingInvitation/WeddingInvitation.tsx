@@ -229,7 +229,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 			</div>
 
 			{/* Special Messages */}
-			<div className="grid md:grid-cols-2 gap-6">
+			<div className="flex flex-col gap-6">
 				{/* No Gifts Message */}
 				<div className="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-400">
 					<div className="flex items-center mb-4">
