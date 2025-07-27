@@ -34,6 +34,7 @@ interface iHospital {
 	address: string;
 	phone: string;
 	distance: string;
+	direction: string;
 }
 
 interface iWeddingInvitationProps {
@@ -148,28 +149,25 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 	// Hospitals data
 	const hospitals: iHospital[] = [
 		{
-			name: "Wandoor NIMS Hospital",
-			address: "Wandoor, Malappuram",
-			phone: "+91 493 421 1234",
-			distance: "1.5 km from venue",
+			name: "NIMS Multi Speciality Hospital",
+			address: "Kalikavu Road, Vaniyambalam Post, Wandoor, Kerala 679328",
+			phone: "",
+			distance: "500 meters from venue",
+			direction: "https://maps.app.goo.gl/rnL7ddEgasCQZRrA6",
 		},
 		{
-			name: "Wandoor Community Health Centre",
-			address: "Wandoor, Malappuram",
-			phone: "+91 493 421 2345",
-			distance: "2 km from venue",
+			name: "Government Taluk Hospital, Wandoor",
+			address: "Hospital Road, Wandoor, Malappuram, Kerala 679328",
+			phone: "",
+			distance: "850 meters from venue",
+			direction: "https://maps.app.goo.gl/bcKaUpJQ9cTkwjGYA9",
 		},
 		{
-			name: "KMCT Medical College Hospital",
-			address: "Manassery, Mukkam",
-			phone: "+91 495 229 4712",
-			distance: "8 km from venue",
-		},
-		{
-			name: "Nilambur Taluk Hospital",
-			address: "Nilambur, Malappuram",
-			phone: "+91 493 422 2216",
-			distance: "15 km from venue",
+			name: "Jafar Medical Centre",
+			address: "Kalikavu Road, Wandoor, Malappuram, Kerala 679328",
+			phone: "",
+			distance: "300 meters from venue",
+			direction: "https://maps.app.goo.gl/FA3ihg7NkHKw8eyj9",
 		},
 	];
 
@@ -485,10 +483,10 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 										className="flex items-center text-blue-600 hover:text-blue-800"
 									>
 										<Phone size={16} className="mr-2" />
-										{hospital.phone}
+										{hospital.phone || "No phone available"}
 									</a>
 									<a
-										href={`https://www.google.com/maps/search/${encodeURIComponent(hospital.name + " " + hospital.address)}`}
+										href={hospital.direction}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="text-sm bg-blue-50 hover:bg-blue-100 text-blue-600 px-3 py-1 rounded-full transition-colors duration-300"
