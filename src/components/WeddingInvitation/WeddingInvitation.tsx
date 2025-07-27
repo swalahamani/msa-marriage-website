@@ -104,17 +104,18 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 		const event = {
 			title: "Wedding Reception - Swalah & Neha",
 			start:
-				new Date("2025-08-03T18:00:00")
+				new Date("2025-08-03T05:30:00")
 					.toISOString()
 					.replace(/[-:]/g, "")
 					.split(".")[0] + "Z",
 			end:
-				new Date("2025-08-03T22:00:00")
+				new Date("2025-08-03T09:30:00")
 					.toISOString()
 					.replace(/[-:]/g, "")
 					.split(".")[0] + "Z",
 			location: "Sienna Auditorium, Wandoor, Kerala 679328",
-			description: "Wedding Reception of Swalah and Neha",
+			description:
+				"Wedding Reception of Swalah and Neha (11:00 AM to 03:00 PM IST)\nVenue: Sienna Auditorium, Wandoor, Kerala\nGoogle Maps: https://maps.app.goo.gl/rRnxUK1cCGVo8b5Y9",
 		};
 
 		const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&location=${encodeURIComponent(event.location)}&details=${encodeURIComponent(event.description)}`;
@@ -201,7 +202,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 							<div>
 								<h3 className="font-medium text-gray-800">Date & Time</h3>
 								<p className="text-gray-600">Sunday, 3rd August 2025</p>
-								<p className="text-gray-600">6:00 PM onwards</p>
+								<p className="text-gray-600">11:00 AM onwards</p>
 							</div>
 						</div>
 
