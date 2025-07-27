@@ -174,7 +174,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 	// Render functions for different sections
 	const renderHomeSection = () => {
 		return (
-			<div className="max-w-2xl mx-auto px-4">
+			<div className="max-w-2xl mx-auto px-4 pb-24 md:pb-8">
 				{/* Header */}
 				<div className="text-center mb-12">
 					<div className="mb-6">
@@ -357,7 +357,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 
 	const renderExploreSection = () => {
 		return (
-			<div className="max-w-4xl mx-auto px-4">
+			<div className="max-w-4xl mx-auto px-4 pb-24 md:pb-8">
 				<div className="text-center mb-12">
 					<Camera className="w-12 h-12 text-blue-400 mx-auto mb-4" />
 					<h2 className="text-3xl font-light text-gray-800 mb-2">
@@ -408,7 +408,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 
 	const renderEmergencySection = () => {
 		return (
-			<div className="max-w-3xl mx-auto px-4">
+			<div className="max-w-3xl mx-auto px-4 pb-24 md:pb-8">
 				<div className="text-center mb-12">
 					<AlertTriangle className="w-12 h-12 text-red-400 mx-auto mb-4" />
 					<h2 className="text-3xl font-light text-gray-800 mb-2">
@@ -514,9 +514,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 
 	// Render the appropriate section based on activeSection
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 pb-16 md:pb-0">
-			{" "}
-			{/* Add padding at bottom for mobile nav */}
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
 			{/* Desktop/Tablet Navigation */}
 			<nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 hidden md:block">
 				<div className="max-w-4xl mx-auto px-4 py-3">
