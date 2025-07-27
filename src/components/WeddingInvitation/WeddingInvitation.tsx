@@ -431,7 +431,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 						<div className="text-red-700">
 							<p className="font-medium">Salman Faris</p>
 							<a
-								href="tel:+918075481757"
+								href="tel:+917736626642"
 								className="text-red-600 hover:text-red-800 underline"
 							>
 								+91 8075481757
