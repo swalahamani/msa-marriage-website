@@ -61,6 +61,29 @@ const NavButton: FC<iNavButtonProps> = ({
 	</button>
 );
 
+// Mobile NavButton component with text always visible
+const MobileNavButton: FC<iNavButtonProps> = ({
+	section,
+	icon: Icon,
+	label,
+	isActive,
+	onClick,
+}) => (
+	<button
+		onClick={() => onClick(section)}
+		className={`flex flex-col items-center justify-center space-y-1 flex-1 py-2 transition-all duration-300 ${
+			isActive
+				? "text-blue-600 relative after:absolute after:bottom-[-8px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 after:h-1 after:bg-blue-500 after:rounded-full"
+				: "text-gray-500"
+		}`}
+	>
+		<Icon size={22} strokeWidth={isActive ? 2.5 : 1.5} />
+		<span className={`text-xs ${isActive ? "font-semibold" : "font-medium"}`}>
+			{label}
+		</span>
+	</button>
+);
+
 const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 	// State for active section
 	const [activeSection, setActiveSection] = useState("home");
@@ -279,6 +302,44 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 					</p>
 				</div>
 			</div>
+
+			{/* Section Navigation Cards */}
+			<div className="mt-12 mb-4">
+				<h3 className="text-xl font-light text-center text-gray-800 mb-6">
+					Discover More
+				</h3>
+				<div className="grid gap-4">
+					<button
+						onClick={() => setActiveSection("explore")}
+						className="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl p-5 text-white text-left transition-transform hover:scale-[1.02] flex items-center"
+					>
+						<div className="bg-white/20 rounded-full p-3 mr-4">
+							<Camera className="w-6 h-6" />
+						</div>
+						<div>
+							<h4 className="text-lg font-medium">Explore Nilambur</h4>
+							<p className="text-sm text-blue-100">
+								Discover beautiful places near the venue
+							</p>
+						</div>
+					</button>
+
+					<button
+						onClick={() => setActiveSection("emergency")}
+						className="bg-gradient-to-r from-red-500 to-orange-500 rounded-xl p-5 text-white text-left transition-transform hover:scale-[1.02] flex items-center"
+					>
+						<div className="bg-white/20 rounded-full p-3 mr-4">
+							<AlertTriangle className="w-6 h-6" />
+						</div>
+						<div>
+							<h4 className="text-lg font-medium">Emergency Information</h4>
+							<p className="text-sm text-red-100">
+								Important contacts and medical facilities
+							</p>
+						</div>
+					</button>
+				</div>
+			</div>
 		</div>
 	);
 
@@ -423,37 +484,73 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-			{/* Navigation */}
+			{/* Top Navigation - Simplified on mobile */}
 			<nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
 				<div className="max-w-4xl mx-auto px-4 py-3">
-					<div className="flex justify-center space-x-2 overflow-x-auto">
-						<NavButton
-							section="home"
-							icon={Heart}
-							label="Invitation"
-							isActive={activeSection === "home"}
-							onClick={setActiveSection}
-						/>
-						<NavButton
-							section="explore"
-							icon={Camera}
-							label="Explore"
-							isActive={activeSection === "explore"}
-							onClick={setActiveSection}
-						/>
-						<NavButton
-							section="emergency"
-							icon={AlertTriangle}
-							label="Emergency"
-							isActive={activeSection === "emergency"}
-							onClick={setActiveSection}
-						/>
+					<div className="flex justify-center">
+						<div className="sm:hidden text-center">
+							<h1 className="text-xl font-medium text-gray-800">
+								{activeSection === "home" && "Wedding Invitation"}
+								{activeSection === "explore" && "Explore Nilambur"}
+								{activeSection === "emergency" && "Emergency Info"}
+							</h1>
+						</div>
+						<div className="hidden sm:flex justify-center space-x-2 overflow-x-auto">
+							<NavButton
+								section="home"
+								icon={Heart}
+								label="Invitation"
+								isActive={activeSection === "home"}
+								onClick={setActiveSection}
+							/>
+							<NavButton
+								section="explore"
+								icon={Camera}
+								label="Explore"
+								isActive={activeSection === "explore"}
+								onClick={setActiveSection}
+							/>
+							<NavButton
+								section="emergency"
+								icon={AlertTriangle}
+								label="Emergency"
+								isActive={activeSection === "emergency"}
+								onClick={setActiveSection}
+							/>
+						</div>
 					</div>
 				</div>
 			</nav>
 
-			{/* Main Content */}
-			<div className="pt-20 pb-8">
+			{/* Bottom Navigation - Visible only on mobile */}
+			<nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50 sm:hidden">
+				<div className="flex justify-between px-2 py-2">
+					<MobileNavButton
+						section="home"
+						icon={Heart}
+						label="Invitation"
+						isActive={activeSection === "home"}
+						onClick={setActiveSection}
+					/>
+					<MobileNavButton
+						section="explore"
+						icon={Camera}
+						label="Explore"
+						isActive={activeSection === "explore"}
+						onClick={setActiveSection}
+					/>
+					<MobileNavButton
+						section="emergency"
+						icon={AlertTriangle}
+						label="Emergency"
+						isActive={activeSection === "emergency"}
+						onClick={setActiveSection}
+					/>
+				</div>
+			</nav>
+
+			{/* Main Content - Add padding at bottom for mobile navigation */}
+			<div className="pt-20 pb-20 sm:pb-8">
 				{activeSection === "home" && renderHomeSection()}
 				{activeSection === "explore" && renderExploreSection()}
 				{activeSection === "emergency" && renderEmergencySection()}
