@@ -430,24 +430,18 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 					<div className="space-y-4">
 						<div className="text-red-700">
 							<p className="font-medium">Salman Faris</p>
-							<a
-								href="tel:+917736626642"
-								className="text-red-600 hover:text-red-800 underline"
-							>
-								+91 8075481757
-							</a>
+							<p className="text-red-600">
+								Please use the number received in the invitation DM
+							</p>
 							<p className="text-sm text-gray-600 mt-1">
 								Languages Spoken: Malayalam & English
 							</p>
 						</div>
 						<div className="text-red-700">
 							<p className="font-medium">Muhammad Swalah</p>
-							<a
-								href="tel:+919656303436"
-								className="text-red-600 hover:text-red-800 underline"
-							>
-								+91 9656303436
-							</a>
+							<p className="text-red-600">
+								Please use the number received in the invitation DM
+							</p>
 							<p className="text-sm text-gray-600 mt-1">
 								Languages Spoken: Malayalam & English
 							</p>
