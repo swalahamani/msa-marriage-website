@@ -305,6 +305,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 							<span className="font-medium text-indigo-600">
 								no photo sessions or cameras, please!
 							</span>
+							<br />
 							We'd love for everyone to be fully present, sharing stories,
 							laughter, and creating real connections. Let's capture memories in
 							our hearts rather than on our phones. Trust us, the conversations
