@@ -127,22 +127,22 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 			name: "Nilambur Teak Museum",
 			description:
 				"World's first teak museum showcasing the history of teak plantation",
-			distance: "15 km from venue",
+			distance: "17.2 km from venue",
 		},
 		{
 			name: "Adyanpara Waterfalls",
 			description: "Scenic waterfall perfect for nature photography",
-			distance: "20 km from venue",
+			distance: "28.5 km from venue",
 		},
 		{
 			name: "Conolly's Plot",
 			description: "Asia's oldest teak plantation with 150+ year old trees",
-			distance: "18 km from venue",
+			distance: "11 km from venue",
 		},
 		{
 			name: "Nedumkayam Rainforest",
 			description: "Dense tropical rainforest with diverse wildlife",
-			distance: "25 km from venue",
+			distance: "22.7 km from venue",
 		},
 	];
 
