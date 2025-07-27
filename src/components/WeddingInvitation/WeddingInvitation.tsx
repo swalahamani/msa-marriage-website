@@ -101,15 +101,17 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 
 	// Handler for calendar event creation
 	const addToCalendar = () => {
+		// Create event with IST time (UTC+5:30)
+		// 11:00 AM IST = 05:30 UTC, 3:00 PM IST = 09:30 UTC
 		const event = {
 			title: "Wedding Reception - Swalah & Neha",
 			start:
-				new Date("2025-08-03T05:30:00")
+				new Date("2025-08-03T05:30:00Z")
 					.toISOString()
 					.replace(/[-:]/g, "")
 					.split(".")[0] + "Z",
 			end:
-				new Date("2025-08-03T09:30:00")
+				new Date("2025-08-03T09:30:00Z")
 					.toISOString()
 					.replace(/[-:]/g, "")
 					.split(".")[0] + "Z",
