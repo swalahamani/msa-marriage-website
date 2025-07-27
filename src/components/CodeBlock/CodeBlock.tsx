@@ -1,3 +1,5 @@
+"use client";
+
 import {HTMLAttributes, forwardRef} from "react";
 
 import {cn} from "@/components/lib/shadcn/lib/utils";

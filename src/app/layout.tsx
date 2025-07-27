@@ -20,8 +20,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	title: "JSONNubes",
-	description: "A Robust Cloud for JSON",
+	title: "Swalah & Neha's Wedding",
+	description: "Wedding Reception Invitation - August 3rd, 2025",
 	manifest: "/site.webmanifest",
 	icons: {
 		icon: "/favicon.ico",
