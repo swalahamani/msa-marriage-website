@@ -274,7 +274,7 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 								{" "}
 								Please don't bring any gifts
 							</span>{" "}
-							- your blessings are more than enough. 💙
+							- your presence are more than enough. 💙
 						</p>
 						<p className="text-gray-600 text-sm leading-relaxed mt-3">
 							If you truly wish to give something, we'd be honored if you'd
