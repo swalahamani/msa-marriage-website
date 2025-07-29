@@ -185,7 +185,9 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 						<h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-2">
 							Swalah <span className="text-blue-400">&</span> Neha
 						</h1>
-						<p className="text-gray-600 text-lg">are getting married</p>
+						<p className="text-gray-600 text-lg">
+							are getting married
+						</p>
 					</div>
 				</div>
 
@@ -202,19 +204,33 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 						<div className="flex items-start space-x-4">
 							<Calendar className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
 							<div>
-								<h3 className="font-medium text-gray-800">Date & Time</h3>
-								<p className="text-gray-600">Sunday, 3rd August 2025</p>
-								<p className="text-gray-600">11:00 AM onwards</p>
+								<h3 className="font-medium text-gray-800">
+									Date & Time
+								</h3>
+								<p className="text-gray-600">
+									Sunday, 3rd August 2025
+								</p>
+								<p className="text-gray-600">
+									11:00 AM onwards
+								</p>
 							</div>
 						</div>
 
 						<div className="flex items-start space-x-4">
 							<MapPin className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
 							<div>
-								<h3 className="font-medium text-gray-800">Venue</h3>
-								<p className="text-gray-600">Sienna Auditorium</p>
-								<p className="text-gray-600 text-sm">56VR+JV3, C H Bypass Rd</p>
-								<p className="text-gray-600 text-sm">Wandoor, Kerala 679328</p>
+								<h3 className="font-medium text-gray-800">
+									Venue
+								</h3>
+								<p className="text-gray-600">
+									Sienna Auditorium
+								</p>
+								<p className="text-gray-600 text-sm">
+									56VR+JV3, C H Bypass Rd
+								</p>
+								<p className="text-gray-600 text-sm">
+									Wandoor, Kerala 679328
+								</p>
 								<a
 									href="https://maps.app.goo.gl/rRnxUK1cCGVo8b5Y9"
 									target="_blank"
@@ -264,12 +280,14 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 					<div className="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-400">
 						<div className="flex items-center mb-4">
 							<Heart className="w-6 h-6 text-blue-500 mr-3" />
-							<h3 className="text-lg font-medium text-gray-800">About Gifts</h3>
+							<h3 className="text-lg font-medium text-gray-800">
+								About Gifts
+							</h3>
 						</div>
 						<p className="text-gray-600 text-sm leading-relaxed">
-							We have everything we need to start our journey together. Your
-							love, laughter, and presence are the only gifts that truly matter
-							to us!
+							By the grace of Allah, we have everything we need to
+							start our journey together. Your love, laughter, and
+							presence are the only gifts that truly matter to us
 							<span className="font-medium text-blue-600">
 								{" "}
 								Please don't bring any gifts
@@ -277,8 +295,8 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 							- your presence is more than enough. 💙
 						</p>
 						<p className="text-gray-600 text-sm leading-relaxed mt-3">
-							If you truly wish to give something, we'd be honored if you'd
-							consider making a donation to the{" "}
+							If you truly wish to give something, we'd be honored
+							if you'd consider making a donation to the{" "}
 							<a
 								href="https://go.swalah.co/msa-marriage-donate-wfp"
 								target="_blank"
@@ -287,8 +305,9 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 							>
 								World Food Programme
 							</a>
-							. Your contribution could help provide meals to those who need
-							them most, spreading love beyond our celebration.
+							. Your contribution could help provide meals to
+							those who need them most, spreading love beyond our
+							celebration.
 						</p>
 					</div>
 
@@ -306,10 +325,11 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 								no photo sessions or cameras, please!
 							</span>
 							<br />
-							We'd love for everyone to be fully present, sharing stories,
-							laughter, and creating real connections. Let's capture memories in
-							our hearts rather than on our phones. Trust us, the conversations
-							will be way more entertaining than any selfie! 📱➡️💬
+							We'd love for everyone to be fully present, sharing
+							stories, laughter, and creating real connections.
+							Let's capture memories in our hearts rather than on
+							our phones. Trust us, the conversations will be way
+							more entertaining than any selfie! 📱➡️💬
 						</p>
 					</div>
 				</div>
@@ -330,7 +350,9 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 								<Camera className="w-6 h-6" />
 							</div>
 							<div>
-								<h4 className="text-lg font-medium">Explore Nilambur</h4>
+								<h4 className="text-lg font-medium">
+									Explore Nilambur
+								</h4>
 								<p className="text-sm text-blue-100">
 									Discover beautiful places near the venue
 								</p>
@@ -347,7 +369,9 @@ const WeddingInvitation: FC<iWeddingInvitationProps> = () => {
 								<AlertTriangle className="w-6 h-6" />
 							</div>
 							<div>
-								<h4 className="text-lg font-medium">Emergency Information</h4>
+								<h4 className="text-lg font-medium">
+									Emergency Information
+								</h4>
 								<p className="text-sm text-red-100">
 									Important contacts and medical facilities
 								</p>
